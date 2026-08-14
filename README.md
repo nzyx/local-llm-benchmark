@@ -21,7 +21,11 @@
 
 ![Sample Report](docs/images/sample-report.png)
 
-**Live Demo**：https://gorgeous-marshmallow-cf24e2.netlify.app/（完整的交互式 HTML 报告，包含准确率/速度/DFlash/双维散点四张图）。
+**在线预览**：
+- 🎨 **项目展示页**（多模型对比 · 作品集风格）：https://shiny-sable-611534.netlify.app/
+- 📊 **完整交互报告**（muse-glimmer-30B · 四图）：https://gorgeous-marshmallow-cf24e2.netlify.app/
+
+**更多示例结果**（含 Qwen3.5-35B-A3B 对比）：见 [`docs/reports/`](docs/reports/README.md)
 
 ---
 
@@ -96,7 +100,10 @@ python generate_report.py      # 自动为每个模型生成独立报告
 │   ├── prepare_data.py       # MMLU / ARC 本地缓存生成（一次性联网）
 │   ├── check_gsm8k.py        # GSM8K 本地 vs 官方一致性校验 / 重建
 │   └── check_data.py         # 全部数据集指纹 + 结构体检
-├── docs/images/              # 示例报告截图（README 引用）
+├── docs/
+│   ├── images/sample-report.png   # 示例报告截图（README 引用）
+│   ├── showcase.html              # 项目展示页（作品集风格，可部署）
+│   └── reports/                   # 示例评测报告（多模型，含备注说明）
 └── README.md
 ```
 

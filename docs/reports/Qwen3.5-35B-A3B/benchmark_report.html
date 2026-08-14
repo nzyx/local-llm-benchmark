@@ -1,0 +1,1215 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>
+Qwen3.5-35B-A3B-Q4_K_M Benchmark Report
+</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f5f6f8;
+    color: #1f2937;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 28px 60px;
+}
+
+.header {
+    margin-bottom: 28px;
+}
+
+.header h1 {
+    margin: 0 0 10px;
+    font-size: 32px;
+}
+
+.header p {
+    margin: 5px 0;
+    color: #6b7280;
+}
+
+.overview {
+    display: grid;
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.overview-card {
+    background: white;
+    border-radius: 14px;
+    padding: 22px;
+    border: 1px solid #e5e7eb;
+}
+
+.overview-card .label {
+    color: #6b7280;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.overview-card .value {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.section {
+    margin-top: 30px;
+}
+
+.section h2 {
+    margin-bottom: 16px;
+    font-size: 22px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
+    gap: 16px;
+}
+
+.card {
+    background: white;
+    border-radius: 14px;
+    padding: 22px;
+    border: 1px solid #e5e7eb;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.card-desc {
+    color: #6b7280;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.big-score {
+    font-size: 38px;
+    font-weight: 800;
+    margin-top: 22px;
+}
+
+.card-meta {
+    color: #6b7280;
+    margin-top: 4px;
+}
+
+.mini-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.mini-grid div {
+    background: #f8fafc;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.mini-grid span {
+    display: block;
+    color: #6b7280;
+    font-size: 11px;
+}
+
+.mini-grid strong {
+    display: block;
+    font-size: 15px;
+    margin-top: 3px;
+}
+
+.mini-grid small {
+    color: #6b7280;
+}
+
+.score.excellent,
+.big-score.excellent {
+    color: #15803d;
+}
+
+.score.good,
+.big-score.good {
+    color: #2563eb;
+}
+
+.score.medium,
+.big-score.medium {
+    color: #d97706;
+}
+
+.score.low,
+.big-score.low {
+    color: #dc2626;
+}
+
+.table-container {
+    background: white;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    background: #f8fafc;
+    color: #6b7280;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 14px 16px;
+    white-space: nowrap;
+}
+
+td {
+    padding: 16px;
+    border-top: 1px solid #eef0f2;
+    white-space: nowrap;
+}
+
+.sub {
+    color: #6b7280;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.footer {
+    margin-top: 40px;
+    color: #9ca3af;
+    font-size: 12px;
+}
+
+@media (max-width: 900px) {
+
+    .overview {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 20px 14px;
+    }
+
+    .overview {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<h1>
+Qwen3.5-35B-A3B-Q4_K_M Benchmark Report
+</h1>
+
+<p>
+Model:
+<strong>Qwen3.5-35B-A3B-Q4_K_M</strong>
+</p>
+
+<p>
+Generated:
+2026-08-14 09:15:16
+</p>
+
+<p>Random Seed: <strong>42</strong></p>
+
+</div>
+
+
+<!-- =====================================================
+     Overall
+     ===================================================== -->
+
+<div class="overview">
+
+<div class="overview-card">
+
+<div class="label">
+Overall Accuracy
+</div>
+
+<div class="value">
+89.20%
+</div>
+
+</div>
+
+
+<div class="overview-card">
+
+<div class="label">
+Correct
+</div>
+
+<div class="value">
+223
+/
+250
+</div>
+
+</div>
+
+
+<div class="overview-card">
+
+<div class="label">
+Benchmarks
+</div>
+
+<div class="value">
+5
+</div>
+
+</div>
+
+
+<div class="overview-card">
+
+<div class="label">
+Generation Speed
+</div>
+
+<div class="value">
+63.30
+</div>
+
+<div class="label">
+tok/s
+</div>
+
+</div>
+
+
+<div class="overview-card">
+
+<div class="label">
+DFlash Acceptance
+</div>
+
+<div class="value">
+0.00%
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     Benchmark Cards
+     ===================================================== -->
+
+<div class="section">
+
+<h2>
+Benchmark Overview
+</h2>
+
+<div class="cards">
+
+
+            <div class="card">
+
+                <div class="card-title">
+                    GSM8K
+                </div>
+
+                <div class="card-desc">
+                    数学推理
+                </div>
+
+                <div class="big-score excellent">
+                    96.00%
+                </div>
+
+                <div class="card-meta">
+                    48 / 50
+                    correct
+                </div>
+
+                <div class="mini-grid">
+
+                    <div>
+                        <span>Speed</span>
+                        <strong>
+                            59.68
+                        </strong>
+                        <small>tok/s</small>
+                    </div>
+
+                    <div>
+                        <span>Latency</span>
+                        <strong>
+                            6.50
+                        </strong>
+                        <small>sec</small>
+                    </div>
+
+                    <div>
+                        <span>DFlash</span>
+                        <strong>
+                            0.00%
+                        </strong>
+                        <small>accept</small>
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <div class="card">
+
+                <div class="card-title">
+                    MMLU
+                </div>
+
+                <div class="card-desc">
+                    综合知识
+                </div>
+
+                <div class="big-score excellent">
+                    92.00%
+                </div>
+
+                <div class="card-meta">
+                    46 / 50
+                    correct
+                </div>
+
+                <div class="mini-grid">
+
+                    <div>
+                        <span>Speed</span>
+                        <strong>
+                            64.58
+                        </strong>
+                        <small>tok/s</small>
+                    </div>
+
+                    <div>
+                        <span>Latency</span>
+                        <strong>
+                            11.64
+                        </strong>
+                        <small>sec</small>
+                    </div>
+
+                    <div>
+                        <span>DFlash</span>
+                        <strong>
+                            0.00%
+                        </strong>
+                        <small>accept</small>
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <div class="card">
+
+                <div class="card-title">
+                    TruthfulQA
+                </div>
+
+                <div class="card-desc">
+                    真实性 / 幻觉控制
+                </div>
+
+                <div class="big-score medium">
+                    72.00%
+                </div>
+
+                <div class="card-meta">
+                    36 / 50
+                    correct
+                </div>
+
+                <div class="mini-grid">
+
+                    <div>
+                        <span>Speed</span>
+                        <strong>
+                            63.82
+                        </strong>
+                        <small>tok/s</small>
+                    </div>
+
+                    <div>
+                        <span>Latency</span>
+                        <strong>
+                            10.47
+                        </strong>
+                        <small>sec</small>
+                    </div>
+
+                    <div>
+                        <span>DFlash</span>
+                        <strong>
+                            0.00%
+                        </strong>
+                        <small>accept</small>
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <div class="card">
+
+                <div class="card-title">
+                    C-Eval
+                </div>
+
+                <div class="card-desc">
+                    中文综合知识
+                </div>
+
+                <div class="big-score good">
+                    88.00%
+                </div>
+
+                <div class="card-meta">
+                    44 / 50
+                    correct
+                </div>
+
+                <div class="mini-grid">
+
+                    <div>
+                        <span>Speed</span>
+                        <strong>
+                            64.27
+                        </strong>
+                        <small>tok/s</small>
+                    </div>
+
+                    <div>
+                        <span>Latency</span>
+                        <strong>
+                            10.89
+                        </strong>
+                        <small>sec</small>
+                    </div>
+
+                    <div>
+                        <span>DFlash</span>
+                        <strong>
+                            0.00%
+                        </strong>
+                        <small>accept</small>
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <div class="card">
+
+                <div class="card-title">
+                    ARC
+                </div>
+
+                <div class="card-desc">
+                    科学推理
+                </div>
+
+                <div class="big-score excellent">
+                    98.00%
+                </div>
+
+                <div class="card-meta">
+                    49 / 50
+                    correct
+                </div>
+
+                <div class="mini-grid">
+
+                    <div>
+                        <span>Speed</span>
+                        <strong>
+                            62.36
+                        </strong>
+                        <small>tok/s</small>
+                    </div>
+
+                    <div>
+                        <span>Latency</span>
+                        <strong>
+                            7.82
+                        </strong>
+                        <small>sec</small>
+                    </div>
+
+                    <div>
+                        <span>DFlash</span>
+                        <strong>
+                            0.00%
+                        </strong>
+                        <small>accept</small>
+                    </div>
+
+                </div>
+
+            </div>
+            
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     Charts
+     ===================================================== -->
+
+
+<div class="section">
+<h2>Charts</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;">
+
+  <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:16px;">
+    <h3 style="margin:0 0 8px;font-size:14px;">Accuracy (%)</h3>
+    <div style="position:relative;height:220px;">
+      <canvas id="accChart" role="img" aria-label="Accuracy by benchmark"></canvas>
+    </div>
+  </div>
+
+  <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:16px;">
+    <h3 style="margin:0 0 8px;font-size:14px;">Generation speed (tok/s)</h3>
+    <div style="position:relative;height:220px;">
+      <canvas id="tpsChart" role="img" aria-label="Generation speed by benchmark"></canvas>
+    </div>
+  </div>
+
+  <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:16px;">
+    <h3 style="margin:0 0 8px;font-size:14px;">DFlash acceptance (%)</h3>
+    <div style="position:relative;height:220px;">
+      <canvas id="dfChart" role="img" aria-label="DFlash acceptance by benchmark"></canvas>
+    </div>
+  </div>
+
+  <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:16px;">
+    <h3 style="margin:0 0 8px;font-size:14px;">Accuracy vs speed (bubble size = DFlash)</h3>
+    <div style="position:relative;height:220px;">
+      <canvas id="scatterChart" role="img" aria-label="Accuracy vs speed scatter"></canvas>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+
+<!-- =====================================================
+     Detailed Table
+     ===================================================== -->
+
+<div class="section">
+
+<h2>
+Detailed Results
+</h2>
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Benchmark</th>
+
+<th>Samples</th>
+
+<th>Correct</th>
+
+<th>Accuracy</th>
+
+<th>Avg Latency</th>
+
+<th>Generation</th>
+
+<th>DFlash</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+
+            <tr>
+                <td>
+                    <strong>GSM8K</strong>
+                    <div class="sub">
+                        数学推理
+                    </div>
+                </td>
+
+                <td>50</td>
+
+                <td>48</td>
+
+                <td>
+                    <span class="score excellent">
+                        96.00%
+                    </span>
+                </td>
+
+                <td>
+                    6.50 s
+                </td>
+
+                <td>
+                    59.68 tok/s
+                </td>
+
+                <td>
+                    0.00%
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <strong>MMLU</strong>
+                    <div class="sub">
+                        综合知识
+                    </div>
+                </td>
+
+                <td>50</td>
+
+                <td>46</td>
+
+                <td>
+                    <span class="score excellent">
+                        92.00%
+                    </span>
+                </td>
+
+                <td>
+                    11.64 s
+                </td>
+
+                <td>
+                    64.58 tok/s
+                </td>
+
+                <td>
+                    0.00%
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <strong>TruthfulQA</strong>
+                    <div class="sub">
+                        真实性 / 幻觉控制
+                    </div>
+                </td>
+
+                <td>50</td>
+
+                <td>36</td>
+
+                <td>
+                    <span class="score medium">
+                        72.00%
+                    </span>
+                </td>
+
+                <td>
+                    10.47 s
+                </td>
+
+                <td>
+                    63.82 tok/s
+                </td>
+
+                <td>
+                    0.00%
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <strong>C-Eval</strong>
+                    <div class="sub">
+                        中文综合知识
+                    </div>
+                </td>
+
+                <td>50</td>
+
+                <td>44</td>
+
+                <td>
+                    <span class="score good">
+                        88.00%
+                    </span>
+                </td>
+
+                <td>
+                    10.89 s
+                </td>
+
+                <td>
+                    64.27 tok/s
+                </td>
+
+                <td>
+                    0.00%
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <strong>ARC</strong>
+                    <div class="sub">
+                        科学推理
+                    </div>
+                </td>
+
+                <td>50</td>
+
+                <td>49</td>
+
+                <td>
+                    <span class="score excellent">
+                        98.00%
+                    </span>
+                </td>
+
+                <td>
+                    7.82 s
+                </td>
+
+                <td>
+                    62.36 tok/s
+                </td>
+
+                <td>
+                    0.00%
+                </td>
+            </tr>
+            
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     Token Statistics
+     ===================================================== -->
+
+<div class="section">
+
+<h2>
+Token Statistics
+</h2>
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Benchmark</th>
+
+<th>Prompt Tokens</th>
+
+<th>Completion Tokens</th>
+
+<th>Total Tokens</th>
+
+<th>Avg Prompt</th>
+
+<th>Avg Completion</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+
+        <tr>
+
+        <td>
+        <strong>GSM8K</strong>
+        </td>
+
+        <td>
+        10,647
+        </td>
+
+        <td>
+        19,405
+        </td>
+
+        <td>
+        30,052
+        </td>
+
+        <td>
+        212.94
+        </td>
+
+        <td>
+        388.10
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>
+        <strong>MMLU</strong>
+        </td>
+
+        <td>
+        8,477
+        </td>
+
+        <td>
+        37,600
+        </td>
+
+        <td>
+        46,077
+        </td>
+
+        <td>
+        169.54
+        </td>
+
+        <td>
+        752.00
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>
+        <strong>TruthfulQA</strong>
+        </td>
+
+        <td>
+        6,238
+        </td>
+
+        <td>
+        33,410
+        </td>
+
+        <td>
+        39,648
+        </td>
+
+        <td>
+        124.76
+        </td>
+
+        <td>
+        668.20
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>
+        <strong>C-Eval</strong>
+        </td>
+
+        <td>
+        7,394
+        </td>
+
+        <td>
+        35,011
+        </td>
+
+        <td>
+        42,405
+        </td>
+
+        <td>
+        147.88
+        </td>
+
+        <td>
+        700.22
+        </td>
+
+        </tr>
+        
+        <tr>
+
+        <td>
+        <strong>ARC</strong>
+        </td>
+
+        <td>
+        5,410
+        </td>
+
+        <td>
+        24,392
+        </td>
+
+        <td>
+        29,802
+        </td>
+
+        <td>
+        108.20
+        </td>
+
+        <td>
+        487.84
+        </td>
+
+        </tr>
+        
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     Summary
+     ===================================================== -->
+
+<div class="section">
+
+<h2>
+Summary
+</h2>
+
+<div class="table-container">
+
+<table>
+
+<tbody>
+
+<tr>
+
+<td>
+Total Prompt Tokens
+</td>
+
+<td>
+<strong>
+38,166
+</strong>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Total Completion Tokens
+</td>
+
+<td>
+<strong>
+149,818
+</strong>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Total Tokens
+</td>
+
+<td>
+<strong>
+187,984
+</strong>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Total Generation Time
+</td>
+
+<td>
+<strong>
+2366.75 sec
+</strong>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Micro Accuracy
+</td>
+
+<td>
+<strong>
+89.20%
+</strong>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+Macro Accuracy
+</td>
+
+<td>
+<strong>
+89.20%
+</strong>
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+<div class="footer">
+
+Qwen3.5-35B-A3B-Q4_K_M Benchmark Suite ·
+GSM8K · MMLU · TruthfulQA · C-Eval · ARC
+
+</div>
+
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const DATA = [{"name": "GSM8K", "accuracy": 96.0, "tps": 59.7, "dflash": 0.0, "samples": 50}, {"name": "MMLU", "accuracy": 92.0, "tps": 64.6, "dflash": 0.0, "samples": 50}, {"name": "TruthfulQA", "accuracy": 72.0, "tps": 63.8, "dflash": 0.0, "samples": 50}, {"name": "C-Eval", "accuracy": 88.0, "tps": 64.3, "dflash": 0.0, "samples": 50}, {"name": "ARC", "accuracy": 98.0, "tps": 62.4, "dflash": 0.0, "samples": 50}];
+const NAMES = DATA.map(d => d.name);
+
+function mkBar(id, values, label, suffix, color) {
+  new Chart(document.getElementById(id), {
+    type: 'bar',
+    data: {
+      labels: NAMES,
+      datasets: [{ label: label, data: values, backgroundColor: color, borderRadius: 4 }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        y: { beginAtZero: true, ticks: { callback: v => v + suffix } },
+        x: { ticks: { autoSkip: false, maxRotation: 30 } }
+      },
+      plugins: { legend: { display: false } }
+    }
+  });
+}
+
+mkBar('accChart', DATA.map(d => d.accuracy), 'Accuracy', '%', '#185FA5');
+mkBar('tpsChart', DATA.map(d => d.tps), 'Speed', ' tok/s', '#1D9E75');
+mkBar('dfChart', DATA.map(d => d.dflash), 'DFlash', '%', '#BA7517');
+
+new Chart(document.getElementById('scatterChart'), {
+  type: 'scatter',
+  data: { datasets: [{
+    data: DATA.map(d => ({ x: d.accuracy, y: d.tps, r: Math.max(5, d.dflash / 6) })),
+    backgroundColor: '#378ADD', pointBackgroundColor: '#185FA5'
+  }]},
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    scales: {
+      x: { title: { display: true, text: 'Accuracy (%)' }, min: 50, max: 105 },
+      y: { title: { display: true, text: 'Speed (tok/s)' }, beginAtZero: false }
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => {
+        const d = DATA[ctx.dataIndex];
+        return d.name + '  acc ' + d.accuracy + '%  ' + d.tps + ' tok/s  DFlash ' + d.dflash + '%';
+      } } }
+    }
+  }
+});
+</script>
+
+
+</body>
+
+</html>
