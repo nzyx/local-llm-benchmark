@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.pyc
+
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# 数据集缓存（可重新生成：scripts/prepare_data.py 或评测时自动构建）
+data/
+
+# 评测结果与报告（可重新运行）
+results/
+
+# 打包 / 临时文件
+*.zip
+*.tar.gz
+*.tmp
+*.log
+gsm8k_check_report.json
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 个人文档（不对外发布）
+AI项目经历_本地AI评测体系.md
+.workbuddy
