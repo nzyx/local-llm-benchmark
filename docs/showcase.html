@@ -24,15 +24,15 @@
   }
   .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 
-  /* Hero —— 纯白 + 纯黑 + 正红点缀 */
-  .hero { padding: 96px 0 72px; text-align: center; }
+  /* Hero */
+  .hero { padding: 96px 0 68px; text-align: center; }
   .hero .tag {
     display: inline-block; font-size: 13px; color: var(--red);
     border: 1px solid rgba(230,0,18,.25); border-radius: 999px;
     padding: 4px 14px; margin-bottom: 24px; letter-spacing: .5px;
   }
-  .hero h1 { font-size: clamp(30px, 5vw, 46px); font-weight: 700; letter-spacing: -1px; color: var(--text); margin-bottom: 18px; }
-  .hero p.lead { max-width: 620px; margin: 0 auto 38px; font-size: 16.5px; color: var(--text-2); }
+  .hero h1 { font-size: clamp(30px, 5vw, 46px); font-weight: 700; letter-spacing: -1px; margin-bottom: 18px; }
+  .hero p.lead { max-width: 640px; margin: 0 auto 38px; font-size: 16.5px; color: var(--text-2); }
   .hero .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
   .btn {
     display: inline-flex; align-items: center; gap: 8px;
@@ -48,8 +48,8 @@
   .btn-ghost:hover { border-color: var(--text); transform: translateY(-2px); }
 
   .hero-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-top: 52px; max-width: 760px; margin-left: auto; margin-right: auto; }
-  .hero-stat { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 20px 12px; }
-  .hero-stat .num { font-size: 27px; font-weight: 700; color: var(--text); }
+  .hero-stat { border: 1px solid var(--line); border-radius: 12px; padding: 20px 12px; }
+  .hero-stat .num { font-size: 27px; font-weight: 700; }
   .hero-stat .num.red { color: var(--red); }
   .hero-stat .lbl { font-size: 13px; color: var(--text-3); margin-top: 2px; }
 
@@ -57,57 +57,48 @@
   .section-title { font-size: 24px; font-weight: 700; text-align: center; letter-spacing: -.5px; }
   .section-sub { text-align: center; color: var(--text-3); font-size: 14px; margin: 10px 0 44px; }
 
-  /* 指标卡 —— 白底细边框，关键数字正红 */
-  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
-  .metric { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 26px 24px; text-align: center; transition: box-shadow .2s ease; }
-  .metric:hover { box-shadow: 0 4px 16px rgba(17,17,17,.05); }
-  .metric .m-label { font-size: 13px; color: var(--text-3); }
-  .metric .m-value { font-size: 34px; font-weight: 700; color: var(--text); margin: 6px 0 2px; }
-  .metric .m-value.red { color: var(--red); }
-  .metric .m-value span { font-size: 17px; font-weight: 500; color: var(--text-3); }
-  .metric .m-note { font-size: 12.5px; color: var(--text-3); }
+  /* 五大任务 */
+  .task-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+  .task { border: 1px solid var(--line); border-radius: 12px; padding: 22px; display: flex; flex-direction: column; }
+  .task .t-chip { align-self: flex-start; font-size: 12px; font-weight: 700; border-radius: 6px; padding: 2px 10px; margin-bottom: 12px; }
+  .task h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+  .task p { font-size: 13px; color: var(--text-2); flex: 1; }
+  .task .t-meta { font-size: 12px; color: var(--text-3); margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line-soft); }
 
-  /* 任务卡 —— 马卡龙浅色标识 */
-  .bench-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
-  .bench { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 22px; transition: box-shadow .2s ease; }
-  .bench:hover { box-shadow: 0 4px 16px rgba(17,17,17,.05); }
-  .bench .b-top { display: flex; justify-content: space-between; align-items: flex-start; }
-  .bench .b-idx {
-    width: 34px; height: 34px; border-radius: 8px; margin-bottom: 12px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 14px; font-weight: 600; color: var(--text);
-  }
-  .bench .b-name { font-size: 16.5px; font-weight: 700; }
-  .bench .b-desc { font-size: 12.5px; color: var(--text-3); margin-top: 1px; }
-  .bench .b-acc { font-size: 34px; font-weight: 700; color: var(--text); }
-  .bench .b-acc small { font-size: 15px; color: var(--text-3); font-weight: 500; }
-  .bench .bar { height: 5px; background: var(--line-soft); border-radius: 99px; margin: 14px 0 12px; overflow: hidden; }
-  .bench .bar i { display: block; height: 100%; border-radius: 99px; background: var(--text); }
-  .bench .b-stats { display: flex; gap: 20px; padding-top: 12px; border-top: 1px solid var(--line-soft); }
-  .bench .b-stats div { flex: 1; }
-  .bench .b-stats .k { font-size: 12px; color: var(--text-3); }
-  .bench .b-stats .v { font-size: 14.5px; font-weight: 600; color: var(--text-2); margin-top: 1px; }
+  /* 对比表 */
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 640px; }
+  th, td { padding: 13px 16px; text-align: left; border-bottom: 1px solid var(--line-soft); }
+  th { font-weight: 600; color: var(--text-3); font-size: 12.5px; background: #fafafa; }
+  td:first-child { font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  .model-muse { color: var(--text); font-weight: 700; }
+  .model-qwen { color: var(--red); font-weight: 700; }
+  .acc-badge { display: inline-block; min-width: 56px; text-align: center; border-radius: 6px; padding: 2px 8px; font-weight: 700; }
+  .badge-black { background: #111; color: #fff; }
+  .badge-red { background: var(--red); color: #fff; }
+  .badge-plain { background: var(--line-soft); color: var(--text-2); }
 
   /* 图表 */
-  .charts { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 14px; }
-  .chart-card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
+  .charts { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 14px; }
+  .chart-card { border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
   .chart-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 14px; color: var(--text-2); }
-  .chart-box { position: relative; height: 240px; }
+  .chart-box { position: relative; height: 250px; }
+  .legend { display: flex; gap: 18px; margin-bottom: 10px; font-size: 12.5px; color: var(--text-2); }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .dot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
 
   /* 方法论 */
   .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
-  .method { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 26px 24px; }
-  .method .ico {
-    width: 38px; height: 38px; border-radius: 8px; display: flex; align-items: center; justify-content: center;
-    font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 14px;
-  }
+  .method { border: 1px solid var(--line); border-radius: 12px; padding: 26px 24px; }
+  .method .ico { width: 38px; height: 38px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; margin-bottom: 14px; }
   .method h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
   .method p { font-size: 13.5px; color: var(--text-2); }
 
   /* 硬件 */
-  .hw { border: 1px solid var(--line); border-radius: 12px; padding: 34px; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 20px; background: #fff; }
+  .hw { border: 1px solid var(--line); border-radius: 12px; padding: 34px; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 20px; }
   .hw .item .k { font-size: 12.5px; color: var(--text-3); }
-  .hw .item .v { font-size: 15.5px; font-weight: 600; color: var(--text); margin-top: 2px; }
+  .hw .item .v { font-size: 15.5px; font-weight: 600; margin-top: 2px; }
 
   footer { padding: 44px 0 52px; text-align: center; border-top: 1px solid var(--line-soft); color: var(--text-3); font-size: 13px; }
   footer a { color: var(--red); text-decoration: none; }
@@ -119,67 +110,136 @@
 <!-- ============ HERO ============ -->
 <header class="hero">
   <div class="container">
-    <div class="tag">端侧 AI · 硬件评测 · 可复现</div>
+    <div class="tag">端侧 AI 评测 · 多模型横向对比 · 可复现</div>
     <h1>本地大模型评测体系</h1>
     <p class="lead">
-      面向迷你 PC 硬件产品的本地 AI 能力评测框架：5 大标准任务、2 万+ 题全本地化、固定种子可复现、
-      性能指标采集，用数据回答「这台机器跑大模型，到底行不行」。
+      一套面向迷你 PC 硬件产品的端侧 AI 评测框架：5 大标准任务、2 万+ 题全本地化、固定种子可复现、
+      数据指纹防篡改。同一套评测，横向对比不同模型，用数据回答「这台机器跑大模型，到底行不行」。
     </p>
     <div class="cta">
       <a class="btn btn-dark" href="https://github.com/nzyx/local-llm-benchmark" target="_blank">GitHub 仓库</a>
       <a class="btn btn-red" href="https://gorgeous-marshmallow-cf24e2.netlify.app/" target="_blank">完整报告 Demo</a>
     </div>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="num red">88.40%</div><div class="lbl">整体准确率</div></div>
-      <div class="hero-stat"><div class="num">22.91</div><div class="lbl">tok/s 生成速度</div></div>
-      <div class="hero-stat"><div class="num">59.64%</div><div class="lbl">投机解码效率</div></div>
-      <div class="hero-stat"><div class="num">250</div><div class="lbl">评测题目</div></div>
+      <div class="hero-stat"><div class="num">2</div><div class="lbl">已评测模型</div></div>
+      <div class="hero-stat"><div class="num red">5 任务</div><div class="lbl">2 万+ 题库</div></div>
+      <div class="hero-stat"><div class="num">88.9%</div><div class="lbl">平均整体准确率</div></div>
+      <div class="hero-stat"><div class="num">100%</div><div class="lbl">断网可跑 · 可复现</div></div>
     </div>
   </div>
 </header>
 
-<!-- ============ METRICS ============ -->
+<!-- ============ 五大任务 ============ -->
 <section>
   <div class="container">
-    <h2 class="section-title">端到端实测成绩</h2>
-    <p class="section-sub">muse-glimmer-30B-Q4_K_M · AMD Strix Halo · seed 42 · 50 题/任务</p>
-    <div class="metrics">
-      <div class="metric"><div class="m-label">整体准确率（微平均）</div><div class="m-value red">88.40%</div><div class="m-note">221 / 250 正确</div></div>
-      <div class="metric"><div class="m-label">Macro 准确率</div><div class="m-value">88.40%</div><div class="m-note">5 任务算术平均</div></div>
-      <div class="metric"><div class="m-label">生成速度</div><div class="m-value">22.91<span> tok/s</span></div><div class="m-note">加权计算 · 端侧实测</div></div>
-      <div class="metric"><div class="m-label">DFlash 接受率</div><div class="m-value">59.64%</div><div class="m-note">投机解码 · 吞吐增益</div></div>
+    <h2 class="section-title">五大评测任务</h2>
+    <p class="section-sub">分别考察模型的不同能力维度，构成完整的能力画像</p>
+    <div class="task-grid">
+      <div class="task">
+        <div class="t-chip" style="background:#E8F1FB">数学推理</div>
+        <h3>GSM8K</h3>
+        <p>小学到初中数学应用题，要求多步计算与逻辑推理，考察模型的数学能力与步骤推导。</p>
+        <div class="t-meta">1,319 题 · openai/gsm8k</div>
+      </div>
+      <div class="task">
+        <div class="t-chip" style="background:#F0ECFA">综合知识</div>
+        <h3>MMLU</h3>
+        <p>57 个学科的多选题（人文、社科、理工、医学），考察模型的世界知识与常识广度。</p>
+        <div class="t-meta">14,042 题 · cais/mmlu</div>
+      </div>
+      <div class="task">
+        <div class="t-chip" style="background:#FBF4E0">真实性</div>
+        <h3>TruthfulQA</h3>
+        <p>真假混杂的常识判断题，考察模型的事实判断能力与幻觉抵抗能力。</p>
+        <div class="t-meta">817 题 · truthful_qa</div>
+      </div>
+      <div class="task">
+        <div class="t-chip" style="background:#E2F3F0">中文知识</div>
+        <h3>C-Eval</h3>
+        <p>52 个中文科目的考试题，考察中文理解与本土化知识掌握程度。</p>
+        <div class="t-meta">1,346 题 · ceval-exam</div>
+      </div>
+      <div class="task">
+        <div class="t-chip" style="background:#F2F2F2">科学推理</div>
+        <h3>ARC</h3>
+        <p>小学科学问答（Challenge 难度），考察科学常识与日常推理能力。</p>
+        <div class="t-meta">1,172 题 · ai2_arc</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ BENCHMARKS ============ -->
+<!-- ============ 多模型对比 ============ -->
 <section>
   <div class="container">
-    <h2 class="section-title">五大任务 · 无短板</h2>
-    <p class="section-sub">能力维：模型 × 量化 × 本地硬件 × 评测模板 的端到端联合表现</p>
-    <div class="bench-grid" id="benchGrid"></div>
-  </div>
-</section>
+    <h2 class="section-title">多模型横向实测</h2>
+    <p class="section-sub">同一套评测体系（seed 42 · 50 题/任务）· AMD Strix Halo · 本地推理</p>
 
-<!-- ============ CHARTS ============ -->
-<section>
-  <div class="container">
-    <h2 class="section-title">数据可视化</h2>
-    <p class="section-sub">准确率与性能双维度一览 · 悬停查看明细</p>
+    <div class="table-wrap" style="margin-bottom:22px">
+      <table>
+        <thead>
+          <tr>
+            <th>任务</th>
+            <th>muse-glimmer-30B<br><span style="font-weight:400;color:#999">Q4_K_M · 开 DFlash</span></th>
+            <th>Qwen3.5-35B-A3B<br><span style="font-weight:400;color:#999">Q4_K_M · 未开投机解码</span></th>
+            <th>领先者</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>GSM8K</td><td><span class="acc-badge badge-black">94%</span></td><td><span class="acc-badge badge-red">96%</span></td><td class="model-qwen">Qwen +2.0pp</td></tr>
+          <tr><td>MMLU</td><td><span class="acc-badge badge-black">94%</span></td><td><span class="acc-badge badge-red">92%</span></td><td class="model-muse">Muse +2.0pp</td></tr>
+          <tr><td>TruthfulQA</td><td><span class="acc-badge badge-black">80%</span></td><td><span class="acc-badge badge-red">72%</span></td><td class="model-muse">Muse +8.0pp</td></tr>
+          <tr><td>C-Eval</td><td><span class="acc-badge badge-black">78%</span></td><td><span class="acc-badge badge-red">88%</span></td><td class="model-qwen">Qwen +10pp</td></tr>
+          <tr><td>ARC</td><td><span class="acc-badge badge-black">96%</span></td><td><span class="acc-badge badge-red">98%</span></td><td class="model-qwen">Qwen +2.0pp</td></tr>
+          <tr><td><strong>整体准确率</strong></td><td><span class="acc-badge badge-black">88.40%</span></td><td><span class="acc-badge badge-red">89.20%</span></td><td class="model-qwen">Qwen +0.8pp</td></tr>
+          <tr><td>生成速度</td><td class="model-muse">22.91 tok/s</td><td class="model-qwen">63.30 tok/s</td><td class="model-qwen">Qwen ≈ 2.8×</td></tr>
+          <tr><td>DFlash 接受率</td><td class="model-muse">59.64%</td><td class="model-qwen">0.00%</td><td class="model-muse">Muse 已启用</td></tr>
+        </tbody>
+      </table>
+    </div>
+
     <div class="charts">
-      <div class="chart-card"><h3>任务准确率 (%)</h3><div class="chart-box"><canvas id="accChart"></canvas></div></div>
-      <div class="chart-card"><h3>生成速度 (tok/s)</h3><div class="chart-box"><canvas id="tpsChart"></canvas></div></div>
-      <div class="chart-card"><h3>DFlash 接受率 (%)</h3><div class="chart-box"><canvas id="dfChart"></canvas></div></div>
-      <div class="chart-card"><h3>准确率 vs 速度（气泡 = DFlash）</h3><div class="chart-box"><canvas id="scatterChart"></canvas></div></div>
+      <div class="chart-card">
+        <div class="legend">
+          <span><span class="dot" style="background:#111"></span>muse-glimmer-30B</span>
+          <span><span class="dot" style="background:#E60012"></span>Qwen3.5-35B-A3B</span>
+        </div>
+        <h3>五大任务准确率对比 (%)</h3>
+        <div class="chart-box"><canvas id="accChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="legend">
+          <span><span class="dot" style="background:#111"></span>muse-glimmer-30B</span>
+          <span><span class="dot" style="background:#E60012"></span>Qwen3.5-35B-A3B</span>
+        </div>
+        <h3>端侧生成速度 (tok/s)</h3>
+        <div class="chart-box"><canvas id="tpsChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="legend">
+          <span><span class="dot" style="background:#111"></span>muse-glimmer-30B</span>
+          <span><span class="dot" style="background:#E60012"></span>Qwen3.5-35B-A3B</span>
+        </div>
+        <h3>投机解码接受率 (%)</h3>
+        <div class="chart-box"><canvas id="dfChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="legend">
+          <span><span class="dot" style="background:#111"></span>muse-glimmer-30B</span>
+          <span><span class="dot" style="background:#E60012"></span>Qwen3.5-35B-A3B</span>
+        </div>
+        <h3>准确率 vs 速度（气泡 = DFlash）</h3>
+        <div class="chart-box"><canvas id="scatterChart"></canvas></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ METHOD ============ -->
+<!-- ============ 方法论 ============ -->
 <section>
   <div class="container">
     <h2 class="section-title">评测方法论</h2>
-    <p class="section-sub">不是「跑个分数」，而是一套可审计、可交付的评测体系</p>
+    <p class="section-sub">不是「跑个分数」，而是一套可审计、可交付、可复用的评测体系</p>
     <div class="method-grid">
       <div class="method"><div class="ico" style="background:#E8F1FB">01</div><h3>端侧端到端</h3><p>测量「模型 × 量化 × 本地硬件」的联合表现，速度与解码效率才是硬件卖点数据。</p></div>
       <div class="method"><div class="ico" style="background:#F0ECFA">02</div><h3>可复现对比</h3><p>固定 seed 抽样，不同模型使用完全相同题目；50 题抽样 ±14pp 置信区间，口径透明。</p></div>
@@ -189,7 +249,7 @@
   </div>
 </section>
 
-<!-- ============ HARDWARE ============ -->
+<!-- ============ 硬件 ============ -->
 <section>
   <div class="container">
     <h2 class="section-title">硬件环境</h2>
@@ -199,7 +259,6 @@
       <div class="item"><div class="k">内存</div><div class="v">128GB LPDDR5x 统一内存</div></div>
       <div class="item"><div class="k">核显</div><div class="v">Radeon 8060S · 40 CU</div></div>
       <div class="item"><div class="k">推理后端</div><div class="v">llama.cpp · Vulkan</div></div>
-      <div class="item"><div class="k">模型</div><div class="v">muse-glimmer-30B Q4_K_M</div></div>
       <div class="item"><div class="k">推理优化</div><div class="v">DFlash 投机解码</div></div>
     </div>
   </div>
@@ -214,53 +273,39 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
-const DATA = [
-  { name: 'GSM8K',    desc: '数学推理',     acc: 94, tps: 26.29, dflash: 76.58, chip: 'A', bg: '#E8F1FB' },
-  { name: 'MMLU',     desc: '综合知识',     acc: 94, tps: 21.67, dflash: 54.29, chip: 'B', bg: '#F0ECFA' },
-  { name: 'TruthfulQA', desc: '真实性 / 幻觉控制', acc: 80, tps: 22.89, dflash: 59.03, chip: 'C', bg: '#FBF4E0' },
-  { name: 'C-Eval',   desc: '中文综合知识', acc: 78, tps: 23.03, dflash: 59.53, chip: 'D', bg: '#E2F3F0' },
-  { name: 'ARC',      desc: '科学推理',     acc: 96, tps: 21.75, dflash: 55.26, chip: 'E', bg: '#F2F2F2' },
-];
+const TASKS = ['GSM8K', 'MMLU', 'TruthfulQA', 'C-Eval', 'ARC'];
+const MUSE = { acc: [94, 94, 80, 78, 96], tps: [26.29, 21.67, 22.89, 23.03, 21.75], df: [76.58, 54.29, 59.03, 59.53, 55.26] };
+const QWEN = { acc: [96, 92, 72, 88, 98], tps: [59.68, 64.58, 63.82, 64.27, 62.36], df: [0, 0, 0, 0, 0] };
 
-const grid = document.getElementById('benchGrid');
-grid.innerHTML = DATA.map(d => `
-  <div class="bench">
-    <div class="b-idx" style="background:${d.bg}">${d.chip}</div>
-    <div class="b-top">
-      <div><div class="b-name">${d.name}</div><div class="b-desc">${d.desc}</div></div>
-      <div class="b-acc">${d.acc}<small>%</small></div>
-    </div>
-    <div class="bar"><i style="width:${d.acc}%"></i></div>
-    <div class="b-stats">
-      <div><div class="k">速度</div><div class="v">${d.tps} tok/s</div></div>
-      <div><div class="k">DFlash</div><div class="v">${d.dflash}%</div></div>
-    </div>
-  </div>`).join('');
-
-const NAMES = DATA.map(d => d.name);
-const BARS = ['#9DB8D8', '#A99BD8', '#D8B77C', '#7FB8AE', '#9C9C9C'];
-
-function mkBar(id, values, suffix, color) {
+function mkGroup(id, m, q, suffix) {
   new Chart(document.getElementById(id), {
     type: 'bar',
-    data: { labels: NAMES, datasets: [{ data: values, backgroundColor: color, borderRadius: 3, maxBarThickness: 42 }] },
+    data: {
+      labels: TASKS,
+      datasets: [
+        { label: 'muse-glimmer-30B', data: m, backgroundColor: '#111111', borderRadius: 3, maxBarThickness: 26 },
+        { label: 'Qwen3.5-35B-A3B', data: q, backgroundColor: '#E60012', borderRadius: 3, maxBarThickness: 26 }
+      ]
+    },
     options: {
       responsive: true, maintainAspectRatio: false,
-      scales: { y: { beginAtZero: true, ticks: { callback: v => v + suffix }, grid: { color: '#f4f4f4' } }, x: { ticks: { autoSkip: false, maxRotation: 30 } } },
-      plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => c.parsed.y + suffix } } }
+      scales: { y: { beginAtZero: true, ticks: { callback: v => v + suffix }, grid: { color: '#f4f4f4' } }, x: { ticks: { autoSkip: false, maxRotation: 20 } } },
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => c.dataset.label + ': ' + c.parsed.y + suffix } } }
     }
   });
 }
-mkBar('accChart', DATA.map(d => d.acc), '%', BARS);
-mkBar('tpsChart', DATA.map(d => d.tps), ' tok/s', BARS);
-mkBar('dfChart', DATA.map(d => d.dflash), '%', BARS);
+mkGroup('accChart', MUSE.acc, QWEN.acc, '%');
+mkGroup('tpsChart', MUSE.tps, QWEN.tps, ' tok/s');
+mkGroup('dfChart', MUSE.df, QWEN.df, '%');
 
 new Chart(document.getElementById('scatterChart'), {
   type: 'scatter',
-  data: { datasets: [{
-    data: DATA.map(d => ({ x: d.acc, y: d.tps, r: Math.max(5, d.dflash / 6) })),
-    backgroundColor: '#111111',
-  }]},
+  data: {
+    datasets: [
+      { label: 'muse-glimmer-30B', data: MUSE.acc.map((a, i) => ({ x: a, y: MUSE.tps[i], r: Math.max(5, MUSE.df[i] / 6) })), backgroundColor: '#111111' },
+      { label: 'Qwen3.5-35B-A3B', data: QWEN.acc.map((a, i) => ({ x: a, y: QWEN.tps[i], r: 6 })), backgroundColor: '#E60012' }
+    ]
+  },
   options: {
     responsive: true, maintainAspectRatio: false,
     scales: {
@@ -268,8 +313,8 @@ new Chart(document.getElementById('scatterChart'), {
       y: { title: { display: true, text: '速度 (tok/s)' }, beginAtZero: false, grid: { color: '#f4f4f4' } }
     },
     plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => {
-      const d = DATA[c.dataIndex];
-      return d.name + '  acc ' + d.acc + '% · ' + d.tps + ' tok/s · DFlash ' + d.dflash + '%';
+      const d = c.datasetIndex === 0 ? MUSE : QWEN;
+      return c.dataset.label + ' · ' + TASKS[c.dataIndex] + ' · acc ' + d.acc[c.dataIndex] + '% · ' + d.tps[c.dataIndex] + ' tok/s';
     } } } }
   }
 });
